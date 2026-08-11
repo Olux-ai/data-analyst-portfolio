@@ -1,0 +1,42 @@
+OrderID,CustomerName,Email,Phone,Country,OrderDate,Product,Quantity,Price,Status
+ORD-5033,  Segun Musa  ,segun.musa@example.com,0800003184,NIGERIA,6 Mar 2026,27in Monitor,3,"95,000",delivered
+ORD-5015,SEGUN MUSA,segun.musa@example.com,080-2518-2518,NIGERIA,15 Mar 2026,Laptop Stand,5,6300,pending
+ORD-5005,  Emeka Nwosu  ,emeka.nwosu@example.com,(080) 148 2148,NG,05/05/2026,Laptop Stand,5,"6,300", Delivered
+ORD-5014,CHIOMA ANYA,CHIOMA.ANYA@EXAMPLE.COM,+234 800002481,nigeria,2026-02-14,USB-C Hub,4,₦8700, Delivered
+ORD-5016,  Ronke Adeyemi  ,,080-2555-2555,nigeria,04/16/2026,Webcam HD,1,"NGN 15,400",Canceled
+ORD-5022,FATIMA BELLO,FATIMA.BELLO@EXAMPLE.COM,(080) 777 2777,Nigeria,22 Apr 2026,Mechanical Keyboard,2,18500.00,DELIVERED
+ORD-5004,  Fatima Bello  ,fatima.bello@example.com,+234 800002111,Nigeria,04/04/2026,USB-C Hub,4,8700,Cancelled
+ORD-5032,chioma anya,chioma.anya@example.com,(080) 147 3147,NIGERIA,2026-02-05,Mechanical Keyboard,2,18500.00,cancelled
+ORD-5019,Ada Obi,ada.obi@example.com,080-2666-2666,NIGERIA,01/19/2026,Noise Cancelling Headset,4,32000,Pending
+ORD-5036,Segun Adigun,segun.adigun@example.com,,NG,,USB-C Hub,,8700,pending
+ORD-5034,ronke adeyemi,ronke.adeyemi@example.com,+234 800003221,Nigeria ,07-04-2026,USB-C Hub,4,"8,700",DELIVERED
+ORD-5027,KELECHI OKAFOR,kelechi.okafor@example.com,(080) 962 2962,Nigeria ,3/27/2026,Office Chair,2,₦68000,Pending
+ORD-5008,  Ngozi Chukwu  ,ngozi.chukwu@example.com,+234 800002259,Nigeria,2026-02-08,Standing Desk,3,"145,000",Canceled
+ORD-5010,amaka yakubu,amaka.yakubu@example.com,+234 800002333,nigeria,4/10/2026,External SSD 1TB,5,"NGN 42,000",DELIVERED
+ORD-5023,Emeka Nwosu,emeka.nwosu@example.com,N/A,Nigeria,05/23/2026,27in Monitor,3,₦95000,pending
+ORD-5029,  Ibrahim Suleiman  ,ibrahim.suleiman@example.com,(080) 036 3036,nigeria,2 May 2026,Noise Cancelling Headset,4,"32,000",Delivered
+ORD-5017,  Uche Okoro  ,uche.okoro@example.com,+234 800002592,NIGERIA,5/17/2026,Office Chair,2,68000.00,Delivered
+ORD-5003,chidi eze,chidi.eze@example.com,N/A,NG,3/3/2026,27in Monitor,,₦95000,PENDING
+ORD-5001,ada obi,ada.obi@example.com,+234 800002000,NG,01/01/2026,Wireless Mouse,1,₦5200,DELIVERED
+ORD-5021,  Chidi Eze  ,chidi.eze@example.com,080-2740-2740,NIGERIA,03/21/2026,Wireless Mouse,1,₦5200,Delivered
+ORD-5012,blessing nnamdi,blessing.nnamdi@example.com,N/A,Nigeria ,2026-06-12,Mechanical Keyboard,2,"NGN 18,500",Canceled
+ORD-5002,bola ade,BOLA.ADE@EXAMPLE.COM,,NG,2026-02-02,Mechanical Keyboard,2,"18,500",DELIVERED
+ORD-5024,Grace Udo,grace.udo@example.com,(080) 851 2851,Nigeria ,2026-06-24,USB-C Hub,4,8700.00,cancelled
+ORD-5007,  Tunde Balogun  ,tunde.balogun@example.com,,NG,07-01-2026,Office Chair,2,"NGN 68,000",pending
+ORD-5004,  Fatima Bello  ,fatima.bello@example.com,+234 800002111,Nigeria,04/04/2026,USB-C Hub,4,8700,Cancelled
+ORD-5009,KELECHI OKAFOR,kelechi.okafor@example.com,N/A,Nigeria ,03/09/2026,Noise Cancelling Headset,4,32000.00,Delivered
+ORD-5020,BOLA ADE,bola.ade@example.com,0800002703,Nigeria,20-02-2026,External SSD 1TB,5,"42,000",cancelled
+ORD-5013,yusuf adigun,yusuf.adigun@example.com,,Nigeria,13 Jan 2026,27in Monitor,3,₦95000, Delivered
+ORD-5031,yusuf adigun,yusuf.adigun@example.com,+234 800003110,Nigeria ,4 Jan 2026,Wireless Mouse,1,5200.00,Pending
+ORD-5006,grace udo,,080-2185-2185,NIGERIA,6/6/2026,Webcam HD,1,15400, Delivered
+ORD-5022,FATIMA BELLO,FATIMA.BELLO@EXAMPLE.COM,(080) 777 2777,Nigeria,22 Apr 2026,Mechanical Keyboard,2,18500.00,DELIVERED
+ORD-5035,,,,Nigeria,03/15/2026,Laptop Stand,2,6300,Delivered
+ORD-5010,amaka yakubu,amaka.yakubu@example.com,+234 800002333,nigeria,4/10/2026,External SSD 1TB,5,"NGN 42,000",DELIVERED
+ORD-5028,amaka yakubu,,N/A,NG,2026-04-01,Standing Desk,3,"145,000",Canceled
+ORD-5015,SEGUN MUSA,segun.musa@example.com,080-2518-2518,NIGERIA,15 Mar 2026,Laptop Stand,5,6300,pending
+ORD-5030,BLESSING NNAMDI,blessing.nnamdi@example.com,N/A,Nigeria ,06/03/2026,External SSD 1TB,5,₦42000,delivered
+ORD-5026,Ngozi Chukwu,,N/A,NG,2026-02-26,Webcam HD,1,15400, Delivered
+ORD-5011,IBRAHIM SULEIMAN,IBRAHIM.SULEIMAN@EXAMPLE.COM,(080) 370 2370,nigeria,05/11/2026,Wireless Mouse,1,5200,pending
+ORD-5025,Tunde Balogun,tunde.balogun@example.com,,NIGERIA,2026-01-25,Laptop Stand,5,6300.00,DELIVERED
+ORD-5018,  Zainab Garba  ,zainab.garba@example.com,0800002629,nigeria,6/18/2026,Standing Desk,3,"NGN 145,000", Delivered
+ORD-5028,amaka yakubu,,N/A,NG,2026-04-01,Standing Desk,3,"145,000",Canceled
