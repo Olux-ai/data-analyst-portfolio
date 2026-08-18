@@ -5,17 +5,22 @@ todo_list = []
 #Function to Add a New task to the todo list
 def add_task():
   task = input("Enter the task: ")
-  todo_list.append({"task": task, "status": "pending"})
-  print("New Task Added Successfully!\n
-  
+  todo_list.append({"task": task, "status": "Pending Task"})
+  print("New Task Added Successfully!\n")
+
+#Function to View all Tasks  
 def view_tasks():
   print("Your Todo List:")
   if len(todo_list) == 0:
     print("No tasks found.")
   else:
-    for i, task in enumerate(todo_list, start=1):
-      print(f"{i}. [{task['status']}] {task['task']}")
+    for i, task in enumerate(todo_list,1):
+      print(f"{i}: [{task['status']}] - {task['task']}")
 
+  print("\n")
+  
+
+  
 #Function to Display a Menu
 def display_menu():
   while(True):
