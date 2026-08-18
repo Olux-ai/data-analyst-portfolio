@@ -19,8 +19,21 @@ def view_tasks():
 
   print("\n")
   
+#Function to Remove a Task from the todo list
+def remove_task():
+  try:
+    if len(todo_list) == 0:
+      print("List is empty. No tasks to remove.")
+    else:
+      search_i = int(input("Enter the task number to you want to remove: ")) -1
+      if 0 <= search_i < len(todo_list):
+        remove_task = todo_list.pop(search_i)
+        print(f"Task Removed: {remove_task['task']}\n")
+      else:
+        print("Invalid task number. Please try again.\n")
+  except ValueError:
+    print("Invalid input. Please enter a valid task number.\n")      
 
-  
 #Function to Display a Menu
 def display_menu():
   while(True):
