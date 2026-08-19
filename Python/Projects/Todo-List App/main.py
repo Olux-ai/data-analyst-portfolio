@@ -25,9 +25,9 @@ def remove_task():
     if len(todo_list) == 0:
       print("List is empty. No tasks to remove.")
     else:
-      search_i = int(input("Enter the task number to you want to remove: ")) -1
-      if 0 <= search_i < len(todo_list):
-        remove_task = todo_list.pop(search_i)
+      task_index = int(input("Enter the task number to you want to remove: ")) -1
+      if 0 <= task_index < len(todo_list):
+        remove_task = todo_list.pop(task_index)
         print(f"Task Removed: {remove_task['task']}\n")
       else:
         print("Invalid task number. Please try again.\n")
@@ -41,10 +41,10 @@ def mark_done():
     if len(todo_list) == 0:
       print("List is empty. No tasks to mark as completed.")
     else:
-      search_i = int(input("Enter the task number you want to mark as completed: ")) -1
-      if 0 <= search_i < len(todo_list):
-        todo_list[search_i]['status'] = "Completed Task"
-        print(f"Task Marked as Completed: {todo_list[search_i]['task']}\n")
+      task_index = int(input("Enter the task number you want to mark as completed: ")) -1
+      if 0 <= task_index < len(todo_list):
+        todo_list[task_index]['status'] = "Completed Task"
+        print(f"Task Marked as Completed: {todo_list[task_index]['task']}\n")
       else:
         print("Invalid task number. Please try again.\n")
   except ValueError:

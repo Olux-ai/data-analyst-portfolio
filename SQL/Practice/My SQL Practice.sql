@@ -56,12 +56,12 @@ FROM Orders
 GROUP BY ShipCountry
 ORDER BY MaxFreight DESC;
 
-SELECT Categories.CategoryName, COUNT(*) AS OrderLine, SUM(Quantity) AS TotalQuantity, SUM(UnitPrice * Quantity) AS TotalSales,AVG(UnitPrice) AS AvgUnitPrice
-FROM Products
+SELECT Categories.CategoryName, COUNT(*) AS OrderLine, SUM(Quantity) AS TotalQuantity, SUM(od.UnitPrice * od.Quantity) AS TotalSales,AVG(od.UnitPrice) AS AvgUnitPrice
+FROM Products AS P
 INNER JOIN Categories
-ON Products.CategoryID = Categories.CategoryID
-INNER JOIN [Order Details]
-ON Products.ProductID = [Order Details].ProductID
+ON P.CategoryID = Categories.CategoryID
+INNER JOIN [Order Details] AS od
+ON P.ProductID = od.ProductID
 GROUP BY Categories.CategoryName
-HAVING SUM(UnitPrice * Quantity) > 10000
+HAVING SUM(od.UnitPrice * od.Quantity) > 10000
 ORDER BY TotalSales DESC;
