@@ -5,13 +5,13 @@ todo_list = []
 #Function to Add a New task to the todo list
 def add_task():
   task = input("Enter the task: ")
-  todo_list.append({"task": task, "status": "Pending Task"})
+  todo_list.append({"task": task, "status": "Pending"})
   print("New Task Added Successfully!\n")
 
 #Function to View all Tasks  
 def view_tasks():
   print("Your Todo List:")
-  if len(todo_list) == 0:
+  if not todo_list:
     print("No tasks found.")
   else:
     for i, task in enumerate(todo_list,1):
@@ -32,13 +32,13 @@ def remove_task():
       else:
         print("Invalid task number. Please try again.\n")
   except ValueError:
-    print("Invalid input. Please enter a valid task number.\n") 
+    print("Invalid input. Please enter a valid task number.\n")
     
     
 #Function to Mark a Task as Completed
 def mark_done():
   try:
-    if len(todo_list) == 0:
+    if not todo_list:
       print("List is empty. No tasks to mark as completed.")
     else:
       task_index = int(input("Enter the task number you want to mark as completed: ")) -1
@@ -74,6 +74,7 @@ def display_menu():
       exit()
     else:
       print("Invalid choice. Please try again.")
+
 
 display_menu()
 
