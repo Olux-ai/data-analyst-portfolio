@@ -1,11 +1,28 @@
+import json
+
 #Create an empty list to store the tasks and their status
 todo_list = []
 
-
+def save_tasks():
+  with open("todo.json", "w") as file:
+    json.dump(todo_list, file, indent=4)
+    
+    
+def load_tasks():
+  global todo_list
+  
+  try:
+    with open("todo.json","r") as file:
+      todo_list = json.load(file)
+  except FileNotFoundError:
+    todo_list = []
+    
+    
 #Function to Add a New task to the todo list
 def add_task():
   task = input("Enter the task: ")
   todo_list.append({"task": task, "status": "Pending"})
+  save_tasks()
   print("New Task Added Successfully!\n")
 
 #Function to View all Tasks  
@@ -22,13 +39,14 @@ def view_tasks():
 #Function to Remove a Task from the todo list
 def remove_task():
   try:
-    if len(todo_list) == 0:
+    if not todo_list:
       print("List is empty. No tasks to remove.")
     else:
       task_index = int(input("Enter the task number to you want to remove: ")) -1
       if 0 <= task_index < len(todo_list):
-        remove_task = todo_list.pop(task_index)
-        print(f"Task Removed: {remove_task['task']}\n")
+        removed_task = todo_list.pop(task_index)
+        save_tasks()
+        print(f"Task Removed: {removed_task['task']}\n")
       else:
         print("Invalid task number. Please try again.\n")
   except ValueError:
@@ -43,7 +61,8 @@ def mark_done():
     else:
       task_index = int(input("Enter the task number you want to mark as completed: ")) -1
       if 0 <= task_index < len(todo_list):
-        todo_list[task_index]['status'] = "Completed Task"
+        todo_list[task_index]['status'] = "Completed"
+        save_tasks()
         print(f"Task Marked as Completed: {todo_list[task_index]['task']}\n")
       else:
         print("Invalid task number. Please try again.\n")
@@ -75,6 +94,7 @@ def display_menu():
     else:
       print("Invalid choice. Please try again.")
 
-
+load_tasks()
+print(todo_list)
 display_menu()
 
