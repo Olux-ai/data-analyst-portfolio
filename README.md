@@ -82,7 +82,7 @@ A simple task management application built to practice fundamental Python progra
 - `json.dump()`
 - `json.load()`
 
-🔗 **[View Project](./Python/First%20DecodeLab%20Projects/Todo-List-App)**
+🔗 **[View Project]([./Python/First%20DecodeLab%20Projects/Todo-List-App](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/First%20DecodeLab%20Projects/Todo-List%20App))**
 
 ---
 
