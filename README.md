@@ -104,7 +104,7 @@ The project helped me practice working with structured data, file handling, erro
 
 Another practical Python project completed during my internship at **DecodeLabs**, focused on strengthening my programming logic, problem-solving, and ability to turn concepts into working applications.
 
-🔗 **[View Project]([./Python/Project3@DecodeLab/Project-3](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab))**
+🔗 **[View Project]([[./Python/Project3@DecodeLab/Project-3](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab)](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab))**
 
 ---
 
