@@ -1,0 +1,137 @@
+table sales
+	lineageTag: a00f0e9d-36ec-47e8-91d0-29ad9836b9c0
+
+	measure total_revenue = SUM(sales[discounted_price])
+		lineageTag: 1ca7c49f-85d5-4db7-87b7-b876ffd20b1a
+
+	measure total_units_sold = sum(sales[sale_quantity])
+		formatString: 0
+		lineageTag: bf232008-8ba2-4b6e-b449-7793bf8ed636
+
+	measure discounted_revenue = SUMX(sales, sales[sale_quantity] * sales[discounted_price])
+		lineageTag: 685a6b84-ed51-45b4-b8e4-31f8f9b1a4d4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure revenue_in_feb =
+			
+			CALCULATE(
+			    sales[discounted_revenue],
+			    dates[date] >= DATE(2025, 02, 01),
+			    dates[date] <= DATE(2025, 02, 28)
+			)
+		lineageTag: 9975da49-f441-4f72-9e1e-80d70ae16912
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sale_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ce8034d-6b23-4f8a-a89e-5a3ce5932109
+		summarizeBy: sum
+		sourceColumn: sale_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c2aa980c-b385-4213-ab0a-8b7b60f03ef7
+		summarizeBy: none
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d9aa7fe-1ab9-4422-a282-e63b3e981251
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 03cca3e2-91ed-4061-8397-6728f9b42265
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9de56e3a-77f0-43cd-9807-e171731a4028
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: a7fbddb5-163a-4629-ab09-7016d554e620
+		summarizeBy: sum
+		sourceColumn: sale_quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_discount
+		dataType: double
+		lineageTag: a1cd98bd-2190-469b-bbeb-3800531a6c1e
+		summarizeBy: sum
+		sourceColumn: sale_discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price = sales[sale_quantity] * RELATED(products[product_list_price])
+		lineageTag: 540ef07b-81ff-4f20-a7bd-7c44067920f9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column discounted_price = (sales[price]  * (1 - sales[sale_discount]))
+		lineageTag: d159d895-b019-4426-b6cb-7c9193352795
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bulk_order = IF (sales[sale_quantity] > 3, "True", "False")
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c9ed2fd7-e3ad-40ed-a75a-0b775a0afc21
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_size = SWITCH(TRUE, sales[discounted_price] < 100, "Tiny", sales[discounted_price] < 200, "Mid", "Massive")
+		lineageTag: 787a51a4-a1ab-4073-a967-fb853371fff7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sales = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Adebayo Olumide\Desktop\My-DataAnalyst-Portfolio\PowerBI\Projects\data-viz-project\sales.csv"), [Delimiter = ",", Columns = 7, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"sale_id", Int64.Type}, {"date_id", Int64.Type}, {"customer_id", Int64.Type}, {"product_id", Int64.Type}, {"store_id", Int64.Type}, {"sale_quantity", Int64.Type}, {"sale_discount", type number}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed column type", {"sale_id"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,73 @@
+table dates
+	lineageTag: 10958dbe-7066-479f-92ed-a77ec29b072c
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5755489d-a476-4a78-a821-657a06b2358d
+		summarizeBy: none
+		sourceColumn: date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 29d35451-6a6d-4e65-8843-747ba1b1781c
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: bc8ebf9a-55c2-4f6c-b919-08ca1dd9c08e
+			defaultHierarchy: LocalDateTable_ceb437a2-34a9-47db-b394-145c010157cb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column date_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 62be9f9e-e1e7-4425-8d5a-6d3f2e582846
+		summarizeBy: sum
+		sourceColumn: date_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_day
+		dataType: int64
+		formatString: 0
+		lineageTag: fdb486f0-4e98-485a-9afb-5a1a406fc815
+		summarizeBy: sum
+		sourceColumn: date_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_weekday
+		dataType: string
+		lineageTag: f05d8d07-c6ab-4e14-852c-50c7696602b8
+		summarizeBy: none
+		sourceColumn: date_weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_week
+		dataType: int64
+		formatString: 0
+		lineageTag: e6c94e73-8b61-438c-938a-ab9b8d24f5d3
+		summarizeBy: sum
+		sourceColumn: date_week
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dates = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Adebayo Olumide\Desktop\My-DataAnalyst-Portfolio\PowerBI\Projects\data-viz-project\dates.csv"), [Delimiter = ",", Columns = 6, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"date_id", Int64.Type}, {"date", type date}, {"date_month", Int64.Type}, {"date_day", Int64.Type}, {"date_weekday", type text}, {"date_week", Int64.Type}})
+				in
+				  #"Changed column type"
+

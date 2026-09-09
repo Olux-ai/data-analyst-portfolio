@@ -1,0 +1,7 @@
+EVALUATE
+ADDCOLUMNS(
+	sales,
+	"sale_price",sales[sale_quantity] * sales[price],
+	"days_before_migration", DATEDIFF(Date(2025, 02, 14),RELATED(dates[date]), DAY) * -1
+)
+ORDER BY [days_before_migration]  DESC

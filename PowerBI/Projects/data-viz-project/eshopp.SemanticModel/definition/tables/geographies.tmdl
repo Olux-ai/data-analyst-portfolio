@@ -1,0 +1,65 @@
+table geographies
+	lineageTag: 97c677cf-834a-4b0d-8a6c-2e3b36ec2ac5
+
+	column geography_country
+		dataType: string
+		lineageTag: 46d7a97c-acfe-4787-9396-9b22f287ad45
+		summarizeBy: none
+		sourceColumn: geography_country
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_state
+		dataType: string
+		lineageTag: c01f3d43-2195-4256-b59a-4d2298913d3a
+		summarizeBy: none
+		sourceColumn: geography_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_city
+		dataType: string
+		lineageTag: c748a01e-85c6-457c-842f-e475a95bafa0
+		summarizeBy: none
+		sourceColumn: geography_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column geography_population
+		dataType: int64
+		formatString: 0
+		lineageTag: 82b4a819-6b02-43d5-8f31-ef8443b909f2
+		summarizeBy: sum
+		sourceColumn: geography_population
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'geography_country Hierarchy'
+		lineageTag: 7a8863e6-3dfd-4ca8-8fdb-d4b106660e4d
+
+		level geography_country
+			lineageTag: e0b9b96e-fb45-4a4c-a1c5-70a1820aff42
+			column: geography_country
+
+		level geography_state
+			lineageTag: 7c2528e4-405a-42e4-ae5d-228a063097d3
+			column: geography_state
+
+		level geography_city
+			lineageTag: 852fb05c-ff6a-4f7c-bf74-bbd4e6d7ff91
+			column: geography_city
+
+	partition geographies = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Adebayo Olumide\Desktop\My-DataAnalyst-Portfolio\PowerBI\Projects\data-viz-project\geographies.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"geography_country", type text}, {"geography_state", type text}, {"geography_city", type text}, {"geography_population", Int64.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

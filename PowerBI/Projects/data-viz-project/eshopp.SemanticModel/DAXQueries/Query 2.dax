@@ -1,0 +1,7 @@
+-- Write a query that selects the customer_name and customer_age columns from the customers table
+EVALUATE
+SELECTCOLUMNS(
+    customers,
+    "Customer_name", customers[customer_name],
+    "customer_age", customers[customer_age]
+)

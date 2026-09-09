@@ -1,0 +1,66 @@
+table stores
+	lineageTag: e8e57956-fd3e-47d2-8d14-049c67d33886
+
+	measure oldest_store_open_date = MIN(stores[store_open_date])
+		formatString: General Date
+		lineageTag: 4f5f9bf5-1402-4be0-a303-5e5c184952fc
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 80e56f09-893a-4e67-99fb-71830004e12c
+		summarizeBy: none
+		sourceColumn: store_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_name
+		dataType: string
+		lineageTag: c4e0b916-b98e-4c92-8bdd-2261c9d1e4b6
+		summarizeBy: none
+		sourceColumn: store_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_type
+		dataType: string
+		lineageTag: 004ec569-c809-437d-8be8-9d1f8cc574fa
+		summarizeBy: none
+		sourceColumn: store_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column store_open_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 10d058ca-aea1-4fcf-b399-2d483361f497
+		summarizeBy: none
+		sourceColumn: store_open_date
+
+		variation Variation
+			isDefault
+			relationship: a18714c7-fae0-491b-a458-03c58a1a3af7
+			defaultHierarchy: LocalDateTable_4dcdcfa8-d1dd-40ef-9785-110d152cf031.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column store_location
+		dataType: string
+		lineageTag: c63e3f54-8e3a-48dc-a4c8-789541c6a8a7
+		summarizeBy: none
+		sourceColumn: store_location
+
+		annotation SummarizationSetBy = Automatic
+
+	partition stores = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\Adebayo Olumide\Desktop\My-DataAnalyst-Portfolio\PowerBI\Projects\data-viz-project\stores.csv"), [Delimiter = ",", Columns = 5, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"store_id", Int64.Type}, {"store_name", type text}, {"store_type", type text}, {"store_open_date", type date}, {"store_location", type text}})
+				in
+				  #"Changed column type"
+
