@@ -1,146 +1,72 @@
-# Data Analyst Portfolio
+# Olumide - Data Analyst Portfolio
 
-Hi, I'm **Adebayo Olumide Philip**, an Electrical & Electronics Engineering graduate transitioning into **Data Analytics**.
+Welcome to my data portfolio! I'm an Electrical & Electronics Engineering graduate transitioning into **Data Analytics**. Here, I document a summary of my projects across Power BI, Excel, and Python.
 
-I'm building my skills through hands-on projects and continuous learning, with a focus on turning raw data into meaningful insights that can support better decision-making.
+📧 [olumide.adebayo19@gmail.com](olumide.adebayo19@gmail.com) &nbsp;|&nbsp; 🔗 [LinkedIn](http://www.linkedin.com/in/olumide-adebayo-9511932a0)
 
-## 🛠️ Skills & Tools
+## 📚 Table of Contents
 
-### Data Analytics
-- Microsoft Excel
-- Power Query
-- Pivot Tables & Pivot Charts
-- What-If Analysis
-- Data Cleaning
-- Data Visualization
-- Dashboard Development
-
-### SQL
-- SELECT & FROM
-- WHERE
-- ORDER BY
-- GROUP BY
-- HAVING
-- JOINs
-- Aggregate Functions
-  - COUNT()
-  - SUM()
-  - AVG()
-  - MIN()
-  - MAX()
-
-### Programming
-- Python
-- Functions & Variables
-- Lists & Dictionaries
-- Error Handling & Exceptions
-- File Handling
-- JSON
-- `json.dump()` & `json.load()`
-
-### Business Intelligence
-- Microsoft Power BI *(currently learning)*
+- [Business Intelligence (Power BI)](#business-intelligence-power-bi)
+- [Excel](#excel)
+- [Python](#python)
+- [SQL Skills](#sql)
+- [Currently Learning](#currently-learning)
 
 ---
 
-## 📊 Data Analytics Projects
+# Business Intelligence (Power BI)
 
-### Project 1 — SuperStore Sales Analysis
-
-**Tools:** Microsoft Excel, Power Query, Pivot Tables, Pivot Charts, Slicers, What-If Analysis
-
-A retail sales analysis project focused on cleaning, analyzing, and visualizing sales data to identify business trends and support decision-making.
-
-**What I worked on:**
-- Cleaned and transformed data using Power Query
-- Created Pivot Tables to answer business questions
-- Used Pivot Charts to visualize sales performance
-- Added Slicers for interactive analysis
-- Applied What-If Analysis
-- Created a sales dashboard
-- Analyzed revenue, quantity sold, product categories, and customer patterns
-
-🔗 **[View Project 1](./Excel/Projects/Project-1)**
+| Project Link | Completion Date | Tools | Project Description |
+|---|---|---|---|
+| 🍕 [Pizza Sales Performance Dashboard](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/PowerBI) | 2026 | Power BI, DAX, Data Modeling, Interactive Filters | Built an interactive, multi-page dashboard analyzing a full year of pizza sales data (Jan–Dec 2015), structured around headline KPIs, sales timing patterns, and best/worst product performance. Created custom DAX calculated columns, built table relationships, and added interactive date-range and category filters. Findings: $817.86K revenue across 21,350 orders ($38.31 AOV), with Friday/Saturday evenings and July/January as peak periods, and Classic-category/Large-size pizzas driving the most revenue. |
 
 ---
 
-## 🐍 Python Projects
+# Excel
 
-### Project 1 — To-Do List Application
-
-**Tools:** Python, JSON
-
-A simple task management application built to practice fundamental Python programming concepts.
-
-**Concepts practiced:**
-- Variables
-- Functions
-- Error handling
-- Exception handling
-- File handling
-- JSON
-- `json.dump()`
-- `json.load()`
-
-🔗 **[View Project]([./Python/First%20DecodeLab%20Projects/Todo-List-App](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/First%20DecodeLab%20Projects/Todo-List%20App))**
+| Project Link | Completion Date | Tools | Project Description |
+|---|---|---|---|
+| 🛒 [SuperStore Sales Analysis](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Excel/Projects/Project-1) | 2026 | Excel, Power Query, Pivot Tables, Pivot Charts, Slicers, What-If Analysis | Cleaned and transformed retail sales data using Power Query, then built Pivot Tables, Pivot Charts, and Slicers to analyze revenue, quantity sold, product categories, and customer patterns. Applied What-If Analysis and summarized findings in a sales dashboard. |
 
 ---
 
-### Project 2 — Expense Tracker
+# Python
 
-**Tools:** Python, JSON
-
-An expense tracking application built during my Python internship at **DecodeLabs**.
-
-The project helped me practice working with structured data, file handling, error handling, and building a practical application from Python fundamentals.
-
-🔗 **[View Project](./Python/Project2@Decodelab/Expense-Tracker)**
+| Project Link | Area | Project Description |
+|---|---|---|
+| ✅ [To-Do List Application](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/First%20DecodeLab%20Projects/Todo-List%20App) | Programming Fundamentals | A task management app built to practice variables, functions, error/exception handling, file handling, and JSON persistence (`json.dump()` / `json.load()`). |
+| 💰 [Expense Tracker](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project2%40Decodelab/Expense-Tracker) | Programming Fundamentals | Built during my Python internship at DecodeLabs; focused on structured data handling, file I/O, and error handling. |
+| 🐍 [DecodeLabs Project 3](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab) | Programming Fundamentals | Another practical project from my DecodeLabs internship, focused on strengthening programming logic and problem-solving. |
 
 ---
 
-### Project 3 — Python Project
+# SQL
 
-**Tools:** Python
+| Project Link | Completion Date | Tools | Project Description |
+|---|---|---|---|
+| 🍕 [Pizza Sales SQL Analysis](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/SQL/Projects) | 2026 | SQL Server (T-SQL), Aggregate Functions, Window Functions | Wrote T-SQL queries to compute the core KPIs behind the Pizza Sales Power BI dashboard — total revenue, average order value, total pizzas sold, total orders, and average pizzas per order — plus chart-ready queries for daily/monthly order trends, percentage of sales by pizza category and size, and Top 5/Bottom 5 pizzas by revenue, quantity, and order count. |
+| 🌍 [Northwind SQL Analysis](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/SQL/Projects/Project-2-Northwind%20SQL%20Analysis) | 2026 | SQL Server (T-SQL), CTEs, JOINs, Window Functions (RANK, LAG) | Analyzed the Northwind database to answer customer and product performance questions: customer segmentation (repeat vs. one-time customers, and by country), repeat-purchase behavior, top-performing products and categories by revenue using `RANK()`, and year-over-year revenue growth using `LAG()`. |
 
-Another practical Python project completed during my internship at **DecodeLabs**, focused on strengthening my programming logic, problem-solving, and ability to turn concepts into working applications.
-
-🔗 **[View Project]([[./Python/Project3@DecodeLab/Project-3](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab)](https://github.com/Olux-ai/data-analyst-portfolio/tree/main/Python/Project%203%40DecodeLab))**
+**Core SQL skills:** SELECT, FROM, WHERE, ORDER BY, GROUP BY, HAVING, JOINs, CTEs, Window Functions, Aggregate Functions (COUNT, SUM, AVG, MIN, MAX)
 
 ---
 
-## 📚 Currently Learning
-
-I'm currently continuing to strengthen my skills in:
+# Currently Learning
 
 - Advanced SQL
-- Microsoft Power BI
 - Python for Data Analysis
-- Data Visualization
-- Business Intelligence
-- Real-world Data Analytics Projects
+- Advanced Power BI (data modeling, advanced DAX)
+- Real-world data analytics projects
 
-My current learning path is:
-
-**Excel → SQL → Power BI → Python → Machine Learning**
+**Learning path:** Excel → SQL → Power BI → Python → Machine Learning
 
 ---
 
 ## 🎯 Career Goal
 
-My immediate goal is to become a **job-ready Data Analyst** and gain experience working with real-world data.
+My immediate goal is to become a **job-ready Data Analyst**, gaining experience working with real-world data. Long term, I aim to grow into a **Machine Learning Engineer and entrepreneur**, using data and AI to solve real-world problems.
 
-In the long term, I aim to become a **Machine Learning Engineer and entrepreneur**, using data and AI to solve real-world problems and build impactful solutions.
+I'm open to connecting with data professionals, mentors, recruiters, and anyone interested in collaborating on data and technology projects.
 
----
-
-## 📈 My Learning Journey
-
-I'm documenting my progress through hands-on projects, continuous learning, and practical problem-solving.
-
-> **Learn → Practice → Build → Analyze → Improve → Repeat**
-
-I'm open to connecting with other data professionals, mentors, recruiters, and people interested in collaborating on data and technology projects.
-
-📧 **Email:** olumide.adebayo19@gmail.com
-
-🔗 **LinkedIn:** [www.linkedin.com/in/olumide-adebayo-9511932a0]
+📧 **Email:** [olumide.adebayo19@gmail.com](mailto:olumide.adebayo19@gmail.com)
+🔗 **LinkedIn:** [linkedin.com/in/olumide-adebayo-9511932a0](http://www.linkedin.com/in/olumide-adebayo-9511932a0)
